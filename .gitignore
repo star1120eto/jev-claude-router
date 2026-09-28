@@ -1,0 +1,26 @@
+# 秘密情報
+.env
+.env.*
+!.env.example
+
+# 判定ログ(プロンプト由来の情報を含み得る)
+logs/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# ツールのキャッシュ
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS / エディタ
+.DS_Store
+.idea/
+.vscode/

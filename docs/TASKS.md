@@ -5,7 +5,7 @@ Phase 1(Jev判定の検証)を終えるまで、Phase 3以降には進まない�
 
 ## Phase 0: 準備
 
-- [ ] **T0.1 リポジトリの安全設定**
+- [x] **T0.1 リポジトリの安全設定**
   `.gitignore`(`.env`, `logs/`, `.venv/`, `__pycache__/` など)と `.env.example`(`TYPESAFE_API_KEY=`, `ANTHROPIC_API_KEY=` のダミー)を追加する。
   完了条件: `.env` を作ってもgitに追跡されない。`git diff --staged` にキーが現れない。
 - [ ] **T0.2 プロジェクト初期化**
