@@ -8,7 +8,7 @@ Phase 1(Jev判定の検証)を終えるまで、Phase 3以降には進まない�
 - [x] **T0.1 リポジトリの安全設定**
   `.gitignore`(`.env`, `logs/`, `.venv/`, `__pycache__/` など)と `.env.example`(`TYPESAFE_API_KEY=`, `ANTHROPIC_API_KEY=` のダミー)を追加する。
   完了条件: `.env` を作ってもgitに追跡されない。`git diff --staged` にキーが現れない。
-- [ ] **T0.2 プロジェクト初期化**
+- [x] **T0.2 プロジェクト初期化**
   uvでPython 3.11+のプロジェクトを作り、`typesafe-sdk`, `anthropic`, `pydantic`, `pyyaml`, `pytest`, `ruff` を依存に追加する。`src/router/` の空パッケージを作る。
   完了条件: `uv sync`, `uv run pytest`(テスト0件でも成功), `uv run ruff check .` が通る。
 - [ ] **T0.3 README初版**
