@@ -11,7 +11,7 @@ Phase 1(Jev判定の検証)を終えるまで、Phase 3以降には進まない�
 - [x] **T0.2 プロジェクト初期化**
   uvでPython 3.11+のプロジェクトを作り、`typesafe-sdk`, `anthropic`, `pydantic`, `pyyaml`, `pytest`, `ruff` を依存に追加する。`src/router/` の空パッケージを作る。
   完了条件: `uv sync`, `uv run pytest`(テスト0件でも成功), `uv run ruff check .` が通る。
-- [ ] **T0.3 README初版**
+- [x] **T0.3 README初版**
   概要、非公式であること、セットアップ手順(環境変数)、実行方法の見出しを書く。
   完了条件: 第三者がREADMEだけでセットアップ手順を追える。
 - [ ] **T0.4 CI**
