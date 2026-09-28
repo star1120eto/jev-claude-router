@@ -49,27 +49,23 @@ uv sync
 
 ### API キーの設定
 
-API キーは環境変数からのみ読みます。コードや設定ファイルには書きません。
+API キーは環境変数から読みます。コードや設定ファイルには書きません。
 
 | 環境変数 | 用途 |
 |---|---|
 | `TYPESAFE_API_KEY` | Jev の判定 |
 | `ANTHROPIC_API_KEY` | Claude の呼び出し |
 
-シェルで直接設定する場合:
-
-```bash
-export TYPESAFE_API_KEY="..."
-export ANTHROPIC_API_KEY="..."
-```
-
-`.env` ファイルを使う場合は、`.env.example` をコピーして値を入れ、`uv run` に渡します。`.env` は `.gitignore` で除外されています。
+ローカルでは、`.env.example` をコピーして `.env` を作り、値を入れてください。
 
 ```bash
 cp .env.example .env
 # .env を編集してキーを入力
-uv run --env-file .env pytest -m live
 ```
+
+`.env` は起動時に [python-dotenv](https://github.com/theskumar/python-dotenv) で環境変数に読み込まれます(現時点ではテストのみ。CLI などのエントリポイントは、実装時に同じ処理を組み込みます)。シェルですでに設定済みの環境変数は上書きしません。
+
+`.env` はローカルにだけ置くファイルです。`.gitignore` で除外されていて、リポジトリに含まれるのは `.env.example`(値は空)だけです。シェルで `export` して渡すこともできます。
 
 ## 実行方法
 

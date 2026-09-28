@@ -42,6 +42,7 @@
 
 | モジュール | 役割 |
 |---|---|
+| `router/env.py` | ローカルの `.env` を python-dotenv で環境変数に読み込む。設定済みの環境変数は上書きしない |
 | `router/config.py` | `config/*.yaml|json` を読み、pydanticで検証する |
 | `router/features.py` | 指示文と履歴から、コードで計算できる特徴量を作る |
 | `router/state.py` | Jevに渡す `state` を組み立てる(切り詰め含む) |
@@ -257,7 +258,7 @@ log:
 
 ## 12. セキュリティ
 
-- キーは環境変数のみ。`.env.example` にはダミー値だけを置く。
+- キーは環境変数のみ。ローカルでは `.env` を python-dotenv で環境変数に読み込む。`.env` はローカルにだけ置き、リポジトリには `.env.example`(値は空)だけを置く。
 - 入力に混ぜた指示でtierを誘導できる(Jevは敵対的入力に弱いと公式にも記載)。複数人で使う場合は、ユーザーごとに上限tier(`max_tier`)を設ける。
 - ログにプロンプト全文を残さないことを既定にする。
 
@@ -280,7 +281,7 @@ jev-claude-router/
 │  └ cases.jsonl
 ├ logs/                # gitignore
 ├ src/router/
-│  ├ config.py  features.py  state.py  classify.py  decide.py
+│  ├ env.py  config.py  features.py  state.py  classify.py  decide.py
 │  ├ claude_client.py  session.py  logging.py
 │  ├ cli.py  gateway.py  eval.py
 └ tests/

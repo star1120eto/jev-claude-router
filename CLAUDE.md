@@ -12,7 +12,7 @@
 
 ## 絶対に守ること
 
-- APIキー(`TYPESAFE_API_KEY`, `ANTHROPIC_API_KEY`)をコード、設定ファイル、ログ、テスト、コミット履歴に含めない。環境変数からのみ読む。
+- APIキー(`TYPESAFE_API_KEY`, `ANTHROPIC_API_KEY`)をコード、設定ファイル、ログ、テスト、コミット履歴に含めない。環境変数からのみ読む(ローカルの `.env` は python-dotenv で環境変数に読み込む)。`.env` はローカルにだけ置き、リポジトリには `.env.example` だけを置く。
 - このリポジトリは公開設定。`.env` は `.gitignore` に入れ、コミット前に `git diff --staged` でキー混入を確認する。
 - ログにはプロンプト全文を既定で残さない(ハッシュ、文字数、Jevの回答のみ)。全文保存は明示的な設定フラグがあるときだけ。
 
@@ -26,7 +26,7 @@
 
 ## 技術スタック(仮定。変更する場合は設計書を更新)
 
-Python 3.11+、uv、`typesafe-sdk`、`anthropic`、pydantic、FastAPI(Phase 3以降)、pytest、ruff。
+Python 3.11+、uv、`typesafe-sdk`、`anthropic`、pydantic、python-dotenv、FastAPI(Phase 3以降)、pytest、ruff。
 
 ## コマンド(Phase 0で整備する)
 
